@@ -191,7 +191,7 @@ Both commands should print version information. If either reports "command not f
 ### 1. Clone the Repository
 
 ```bash
-git clone [https://github.com/THEnormalguYYy/personal-RAG-document.git](https://github.com/THEnormalguYYy/personal-RAG-document.git)
+git clone https://github.com/THEnormalguYYy/personal-RAG-document.git
 cd personal-document-rag
 ```
 
