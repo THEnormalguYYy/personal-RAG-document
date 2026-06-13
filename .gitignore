@@ -1,0 +1,113 @@
+# ---------------------------------------------------------------------------
+# personal-document-rag :: .gitignore
+# Blocks secrets, raw source documents, persistent vector store, and caches.
+# ---------------------------------------------------------------------------
+
+# --- Secrets & Local Environment Configuration -----------------------------
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+secrets.toml
+.streamlit/secrets.toml
+
+# --- Raw Documents & Local Ingestion Data ----------------------------------
+# Never commit user-uploaded source material (privacy + repo bloat).
+data/
+documents/
+uploads/
+raw_docs/
+*.pdf
+*.docx
+*.doc
+*.pptx
+*.ppt
+*.xlsx
+*.xls
+*.csv
+*.eml
+*.msg
+*.html
+*.epub
+
+# --- Persistent Vector Database --------------------------------------------
+# ChromaDB on-disk collection (embeddings + indexed payloads).
+chroma_db/
+*.sqlite3
+*.duckdb
+*.parquet
+
+# --- Local Model Caches (FlashRank / Unstructured / HuggingFace) -----------
+.cache/
+.flashrank_cache/
+models/
+*.onnx
+~/.cache/huggingface/
+
+# --- Python Bytecode & Build Artifacts -------------------------------------
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+build/
+dist/
+develop-eggs/
+downloads/
+eggs/
+.eggs/
+*.egg-info/
+*.egg
+.installed.cfg
+MANIFEST
+pip-log.txt
+pip-delete-this-directory.txt
+
+# --- Virtual Environments --------------------------------------------------
+.venv/
+venv/
+env/
+ENV/
+.python-version
+__pypackages__/
+
+# --- Testing & Coverage ----------------------------------------------------
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+.coverage.*
+htmlcov/
+.tox/
+.nox/
+coverage.xml
+*.cover
+
+# --- Jupyter / Notebook Checkpoints -----------------------------------------
+.ipynb_checkpoints/
+profile_default/
+ipython_config.py
+
+# --- Logs & Runtime Output -------------------------------------------------
+*.log
+logs/
+*.out
+*.err
+
+# --- IDE & Editor Metadata -------------------------------------------------
+.idea/
+.vscode/
+*.swp
+*.swo
+*.sublime-project
+*.sublime-workspace
+
+# --- OS-Generated Files ----------------------------------------------------
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+desktop.ini

@@ -1,0 +1,47 @@
+# ===========================================================================
+# personal-document-rag :: requirements.txt
+# Mutually compatible production dependency set built around the LlamaIndex
+# 0.13.x line (required by llama-index-postprocessor-flashrank-rerank).
+# Python 3.10 - 3.12 recommended.
+#
+# The LlamaIndex integration packages use floor constraints and are left for
+# the resolver to pin to a mutually compatible release, because their exact
+# patch versions are tightly coupled to llama-index-core.
+# ===========================================================================
+
+# --- UI Framework ----------------------------------------------------------
+streamlit>=1.39.0,<2.0.0
+
+# --- LlamaIndex Orchestration Core -----------------------------------------
+llama-index>=0.13.0,<0.14.0
+llama-index-core>=0.13.0,<0.14.0
+
+# --- LlamaIndex Model Integrations (OpenAI) --------------------------------
+llama-index-llms-openai>=0.5.0
+llama-index-embeddings-openai>=0.5.0
+
+# --- Vector Store Adapter (ChromaDB) ---------------------------------------
+llama-index-vector-stores-chroma>=0.5.0
+chromadb>=0.5.18
+
+# --- Hybrid Search :: Lexical BM25 Retrieval -------------------------------
+llama-index-retrievers-bm25>=0.6.0
+rank-bm25==0.2.2
+
+# --- Local Cross-Encoder Re-ranking (FlashRank) ----------------------------
+flashrank>=0.2.10
+llama-index-postprocessor-flashrank-rerank>=0.2.1,<0.3.0
+
+# --- Layout-Aware Document Ingestion (Unstructured hi_res) ------------------
+unstructured[all-docs]==0.15.13
+# Pin pdfminer.six: unstructured 0.15.13 imports PSSyntaxError from
+# pdfminer.pdfparser, which newer pdfminer.six releases removed/relocated.
+pdfminer.six==20231228
+# pdfplumber pins pdfminer.six exactly; 0.11.4 matches the pin above.
+pdfplumber==0.11.4
+
+# --- Cloud Model Provider SDK ----------------------------------------------
+openai>=1.54.3
+
+# --- Environment & Secrets Management --------------------------------------
+python-dotenv==1.0.1
