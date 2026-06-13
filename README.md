@@ -325,7 +325,7 @@ streamlit run app.py --server.port 8080
 
 ## 📄 License
 
-This project is provided as-is for personal and educational use. Add your preferred license (e.g., MIT) here before public distribution.
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ---
 
